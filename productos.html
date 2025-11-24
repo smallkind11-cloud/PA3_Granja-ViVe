@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Productos — Granja Porcina Vi.Ve."/>
+  <title>Granja Vi.Ve. — Productos</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <header id="main-header">
+    <div class="enc-left">
+      <h1>Granja Porcina Vi.Ve.</h1>
+      <p class="subtitulo">Producción y cuidado responsable</p>
+    </div>
+
+    <div class="enc-right">
+      <nav>
+        <ul class="nav-list">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="productos.html" class="activo">Productos</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <div class="controls">
+        <input id="search" type="search" placeholder="Buscar producto...">
+        <button id="btn-cart">Carrito (<span id="cart-count">0</span>)</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="productos-intro">
+      <h2>Productos de la granja</h2>
+      <p id="promo">Promo: envío gratis en pedidos mayores a S/200 — Termina en <span id="countdown">00:00</span></p>
+    </section>
+
+    <section id="productos-seccion">
+      <div id="productos" class="productos-grid">
+        <!-- Los productos se generan por script.js -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal carrito -->
+  <aside id="cart-modal" class="modal hidden">
+    <div class="modal-content">
+      <h3 id="cart-title">Tu carrito</h3>
+      <ul id="cart-items"></ul>
+      <p>Total: S/ <span id="cart-total">0.00</span></p>
+      <button id="checkout">Pagar</button>
+      <button id="close-cart">Cerrar</button>
+    </div>
+  </aside>
+
+  <footer>
+    <p>© <span id="year"></span> Granja Porcina Vi.Ve.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

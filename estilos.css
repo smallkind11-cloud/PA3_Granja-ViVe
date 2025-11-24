@@ -1,0 +1,298 @@
+/* VARIABLES CSS */
+:root {
+    --verde: #4CAF50;
+    --morado: #7B1FA2;
+    --naranja: #FF9800;
+    --amarillo: #FFEB3B;
+    --marron: #8B4513;
+    --negro: #000000;
+    --fondo-claro: #f9f9f9;
+    --texto: #333333;
+}
+
+/* ESTILOS GENERALES */
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--fondo-claro);
+    color: var(--texto);
+    margin: 0;
+    padding: 0;
+}
+
+/* --- PORTADA CON OVERLAY OSCURO --- */
+.portada {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+}
+
+.imagen-portada {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Overlay oscuro */
+.portada .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    z-index: 5;
+}
+
+/* LOGO FLOTANTE */
+.logo-flotante {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 120px;
+    z-index: 10;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+/* REDES SOCIALES EN TEXTO */
+.social-icons {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 15px;
+    z-index: 10;
+}
+
+.social-icons a {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 8px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.social-icons a:hover {
+    background-color: var(--amarillo);
+    color: var(--negro);
+    transform: scale(1.05);
+}
+
+/* HEADER */
+header {
+    background-color: var(--verde);
+    color: white;
+    text-align: center;
+    padding: 1.5em 0;
+}
+
+header h1 {
+    margin: 10px 0 5px 0;
+}
+
+header p {
+    margin: 0 0 10px 0;
+}
+
+/* NAV */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: var(--marron);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav li {
+    display: inline-block;
+}
+
+nav a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 14px 20px;
+    transition: all 0.3s ease;
+}
+
+nav a:hover,
+nav a:focus,
+nav a.activo {
+    background-color: var(--amarillo);
+    color: var(--negro);
+    font-weight: bold;
+}
+
+/* SECCIONES */
+section {
+    padding: 2em;
+    margin: 1em auto;
+    width: 90%;
+    max-width: 1000px;
+    background-color: white;
+    border-radius: 10px;
+    border: 2px solid var(--verde);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: aparecer 0.8s ease-out forwards;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+@keyframes aparecer {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h1, h2 {
+    color: var(--morado);
+}
+
+/* Selectores avanzados */
+section:nth-child(even) {
+    border-color: var(--naranja);
+}
+
+section:nth-child(odd) {
+    border-color: var(--verde);
+}
+
+/* GALERÍA */
+.galeria,
+.galeria-contenedor {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+    justify-items: center;
+    text-align: center;
+}
+
+.imagen-seccion,
+.galeria img {
+    width: 100%;
+    max-width: 320px;
+    border-radius: 10px;
+    border: 2px solid var(--verde);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.imagen-seccion:hover,
+.galeria img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+}
+
+/* MENSAJE FINAL EN GALERÍA */
+.mensaje-final {
+    text-align: center;
+    font-style: italic;
+    color: var(--marron);
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+/* ANIMACIÓN PARA SVG */
+#svg-logo svg text {
+    animation: brillar 2s ease-in-out infinite alternate;
+}
+
+@keyframes brillar {
+    from { fill: var(--verde); opacity: 0.7; }
+    to { fill: var(--morado); opacity: 1; }
+}
+
+/* FORMULARIO */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: var(--fondo-claro);
+    padding: 1em;
+    border-radius: 10px;
+    border: 2px solid var(--verde);
+}
+
+label {
+    font-weight: bold;
+    color: var(--marron);
+}
+
+input, textarea, button {
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+}
+
+button {
+    background-color: var(--verde);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--morado);
+}
+
+/* TABLA */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1em;
+}
+
+th, td {
+    border: 1px solid var(--marron);
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: var(--verde);
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f1f1f1;
+}
+
+/* FOOTER */
+footer {
+    background-color: var(--marron);
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+    font-size: 0.9em;
+}
+
+/* RESPONSIVE GENERAL */
+@media (max-width: 700px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    section {
+        width: 95%;
+        padding: 1.5em;
+    }
+
+    form {
+        padding: 0.8em;
+    }
+}
+
+/* HACK CSS: ajuste especial para Internet Explorer */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    header {
+        background-color: #5cb85c;
+    }
+}
